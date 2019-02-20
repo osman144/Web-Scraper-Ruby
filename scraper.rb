@@ -8,7 +8,11 @@ content = document.read
 
 parsed_content = Nokogiri::HTML(content)
 
-parsed_content.css('.content').css('.rows').css('.result-row').each do |
+parsed_content.css('.content').css('.rows').css('.result-row').each do |row|
+    title = row.css('.result-title').inner_text
+    puts title 
+    puts '-------------------------------------'
+end 
 
 
-puts parsed_content.css('.content').css('.rows').css('.result-row').first
+# puts parsed_content.css('.content').css('.rows').css('.result-row').css('.result-title').inner_text
